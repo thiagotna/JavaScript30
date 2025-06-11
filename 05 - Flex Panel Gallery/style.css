@@ -40,6 +40,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   flex: 1;
 }
 
@@ -97,4 +98,8 @@ body {
 .panel.open {
   flex: 5;
   font-size: 40px;
+}
+
+.panel:not(.open):hover {
+  font-size: 24px;
 }
