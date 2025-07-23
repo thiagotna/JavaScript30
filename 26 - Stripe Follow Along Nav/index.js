@@ -5,7 +5,8 @@ const nav = document.querySelector('.top')
 const mouseEnter = (e) => {
   e.target.classList.add('trigger-enter')
   setTimeout(() => {
-    e.target.classList.add('trigger-enter-active')
+    e.target.classList.contains('trigger-enter') &&
+      e.target.classList.add('trigger-enter-active')
   }, 150)
   background.classList.add('open')
 
