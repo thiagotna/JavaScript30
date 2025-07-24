@@ -17,26 +17,26 @@ const isVideoPlaying = (video) => {
   )
 }
 const handlePlay = (e) => {
-  if (e.target.classList.contains('toggle')) {
+  if (e.currentTarget.classList.contains('toggle')) {
     if (isVideoPlaying(videoPlayer)) {
       videoPlayer.pause()
-      e.target.innerHTML = '►'
+      e.currentTarget.innerHTML = '►'
     } else {
       videoPlayer.play()
-      e.target.innerHTML = '⏸︎'
+      e.currentTarget.innerHTML = '⏸︎'
     }
   }
 }
 const handleSkip = (e) => {
-  const elementDataSkip = +e.target.dataset.skip
+  const elementDataSkip = +e.currentTarget.dataset.skip
 
-  if (e.target.dataset.skip) {
+  if (e.currentTarget.dataset.skip) {
     videoPlayer.currentTime += elementDataSkip
   }
 }
 const handleSlides = (e) => {
-  let inputValue = e.target.value
-  const videoControlName = e.target.getAttribute('name')
+  let inputValue = e.currentTarget.value
+  const videoControlName = e.currentTarget.getAttribute('name')
 
   if (videoControlName && videoControlName === 'volume') {
     videoPlayer.volume = inputValue

@@ -1,7 +1,7 @@
 const divs = document.querySelectorAll('div')
 
 const logText = (e) => {
-  console.log(e.target.classList.value)
+  console.log(e.currentTarget.classList.value)
   // e.stopPropagation() // stop bubling
 }
 

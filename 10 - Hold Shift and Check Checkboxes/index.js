@@ -6,9 +6,9 @@ let lastChecked = null
 function handleCheck(e) {
   let inBetween = false
 
-  if (e.shiftKey && e.target.checked) {
+  if (e.shiftKey && e.currentTarget.checked) {
     inboxItems.forEach((checkbox) => {
-      if (checkbox === e.target || checkbox === lastChecked) {
+      if (checkbox === e.currentTarget || checkbox === lastChecked) {
         inBetween = !inBetween
       }
 
@@ -18,7 +18,7 @@ function handleCheck(e) {
     })
   }
 
-  lastChecked = e.target
+  lastChecked = e.currentTarget
 }
 
 inboxItems.forEach((checkbox) => {

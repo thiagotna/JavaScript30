@@ -5,7 +5,7 @@ const items = JSON.parse(localStorage.getItem('items')) || []
 const addItem = (e) => {
   e.preventDefault()
 
-  const text = e.target.querySelector('[name=item]').value
+  const text = e.currentTarget.querySelector('[name=item]').value
   const item = { text, done: false }
 
   items.push(item)
@@ -14,7 +14,7 @@ const addItem = (e) => {
   const JSONString = JSON.stringify(items)
 
   localStorage.setItem('items', JSONString)
-  e.target.reset()
+  e.currentTarget.reset()
 }
 const populateList = (plates = [], platesList) => {
   platesList.innerHTML = plates
@@ -31,9 +31,9 @@ const populateList = (plates = [], platesList) => {
     .join('')
 }
 const toggleDone = (e) => {
-  if (!e.target.matches('input')) return
+  if (!e.currentTarget.matches('input')) return
 
-  const el = e.target
+  const el = e.currentTarget
   const index = el.dataset.index
   items[index].done = !items[index].done
 

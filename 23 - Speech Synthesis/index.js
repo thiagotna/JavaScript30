@@ -8,7 +8,7 @@ const stopButton = document.querySelector('#stop')
 msg.text = document.querySelector('[name="text"]').value
 
 const populatedVoices = (e) => {
-  voices = e.target.getVoices()
+  voices = e.currentTarget.getVoices()
   voicesDropdown.innerHTML = voices
     .map(
       (voice) =>
@@ -18,7 +18,7 @@ const populatedVoices = (e) => {
 }
 
 const setVoice = (e) => {
-  msg.voice = voices.find((voice) => voice.name === e.target.value)
+  msg.voice = voices.find((voice) => voice.name === e.currentTarget.value)
 }
 
 const toggle = (startOver = true) => {
@@ -27,7 +27,7 @@ const toggle = (startOver = true) => {
 }
 
 const setOptions = (e) => {
-  msg[e.target.name] = e.target.value
+  msg[e.currentTarget.name] = e.currentTarget.value
   toggle()
 }
 

@@ -16,7 +16,7 @@ const findMatches = (string, array) => {
 }
 
 const displayMatches = (e) => {
-  const string = e.target.value
+  const string = e.currentTarget.value
 
   if (!string) {
     clearSuggestionList()

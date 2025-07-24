@@ -3,14 +3,14 @@ const background = document.querySelector('.dropdownBackground')
 const nav = document.querySelector('.top')
 
 const mouseEnter = (e) => {
-  e.target.classList.add('trigger-enter')
+  e.currentTarget.classList.add('trigger-enter')
   setTimeout(() => {
-    e.target.classList.contains('trigger-enter') &&
-      e.target.classList.add('trigger-enter-active')
+    e.currentTarget.classList.contains('trigger-enter') &&
+      e.currentTarget.classList.add('trigger-enter-active')
   }, 150)
   background.classList.add('open')
 
-  const dropdown = e.target.querySelector('.dropdown')
+  const dropdown = e.currentTarget.querySelector('.dropdown')
   const dropdownCoords = dropdown.getBoundingClientRect()
   const navCoords = nav.getBoundingClientRect()
 
@@ -30,7 +30,7 @@ const mouseEnter = (e) => {
 }
 
 const mouseLeave = (e) => {
-  e.target.classList.remove('trigger-enter', 'trigger-enter-active')
+  e.currentTarget.classList.remove('trigger-enter', 'trigger-enter-active')
   background.classList.remove('open')
 }
 

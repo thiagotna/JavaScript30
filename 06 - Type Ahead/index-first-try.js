@@ -5,7 +5,7 @@ const input = document.querySelector('.search') // Gets input element
 const suggestionsList = document.querySelector('.suggestions') // gets list element
 const defaultListItems = Array.from(suggestionsList.children) // Saves defaults list elements into a variable to be used later
 const handleChange = (e) => {
-  const inputValue = e.target.value //gets input value
+  const inputValue = e.currentTarget.value //gets input value
   const filteredCities = cities.filter(
     (obj) => obj.city.includes(inputValue) || obj.state.includes(inputValue),
   ) // returns filtered array that checks array elements that contains the string pattern

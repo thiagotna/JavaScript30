@@ -4,9 +4,9 @@ const cssProperties = getComputedStyle(root)
 const inputControls = document.querySelectorAll('.controls input')
 
 const handleEvent = (e) => {
-  const elId = e.target.id
+  const elId = e.currentTarget.id
   let cssPropertyValue =
-    elId !== 'base' ? `${e.target.value}px` : e.target.value
+    elId !== 'base' ? `${e.currentTarget.value}px` : e.currentTarget.value
   const savedValue = localStorage.getItem(elId)
 
   root.style.setProperty(`--${elId}`, cssPropertyValue)

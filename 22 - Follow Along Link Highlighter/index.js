@@ -6,7 +6,7 @@ highlight.classList.add('highlight')
 document.body.append(highlight)
 
 const highlightLink = (e) => {
-  const linkCoords = e.target.getBoundingClientRect()
+  const linkCoords = e.currentTarget.getBoundingClientRect()
   const coords = {
     width: linkCoords.width,
     height: linkCoords.height,
